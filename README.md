@@ -1,6 +1,6 @@
 # Django Sentry on Heroku
 
-Get this up and runnnig by::
+Get this up and runnnig by the following shell commands:
 
 ```bash
 # Create and provision Heroku application 

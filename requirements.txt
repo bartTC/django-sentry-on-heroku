@@ -1,3 +1,4 @@
 sentry             # A realtime logging and aggregation server.
 gevent             # Python network library that uses greenlet and libevent for easy and scalable concurrency
 dj-database-url    # Use Database URLs in your Django Application.
+psycopg2           # Python-PostgreSQL Database Adapter

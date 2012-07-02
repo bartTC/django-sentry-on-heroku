@@ -6,8 +6,10 @@ import os
 import dj_database_url
 from urlparse import urlparse
 
-DATABASES = {'default': dj_database_url.config(default='sqlite:///' +
-        os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'db.sqlite') )}
+DATABASES = {'default': dj_database_url.config(
+	env='HEROKU_POSTGRESQL_BROWN',
+	default='sqlite:///' + os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'db.sqlite') ,
+)}
 
 SENTRY_WEB_HOST = '0.0.0.0'
 SENTRY_WEB_PORT = int(os.environ.get('PORT', 9000))

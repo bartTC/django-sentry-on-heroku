@@ -7,7 +7,7 @@ import dj_database_url
 from urlparse import urlparse
 
 DATABASES = {'default': dj_database_url.config(
-	env='HEROKU_POSTGRESQL_BROWN',
+	env='HEROKU_POSTGRESQL_BROWN_URL',
 	default='sqlite:///' + os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'db.sqlite') ,
 )}
 

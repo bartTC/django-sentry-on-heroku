@@ -6,14 +6,11 @@ Get this up and runnnig by::
 # Create and provision Heroku application 
 heroku create
 heroku addons:add shared-database:5mb
-# Sent config variables
 heroku config:add SENTRY_KEY=<some-random-access-key>
+git push heroku master
 # Initialize Sentry
-heroku run bash
-	# Run this one command in the Heroku shell, then exit it:
 heroku run sentry --config=sentry_conf.py upgrade
 heroku run sentry --config=sentry_conf.py createsuperuser
-heroku scale web=1
 ```
 
 

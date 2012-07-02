@@ -11,6 +11,11 @@ DATABASES = {'default': dj_database_url.config(default='sqlite:///' +
 
 SENTRY_WEB_HOST = '0.0.0.0'
 SENTRY_WEB_PORT = int(os.environ.get('PORT', 9000))
+SENTRY_WEB_OPTIONS = {
+    'workers': 3,  
+    'worker_class': 'gevent',
+}
+
 
 SENTRY_PUBLIC = False
 SENTRY_KEY = os.environ.get('SENTRY_KEY')

@@ -3,25 +3,19 @@
 from sentry.conf.server import *
 
 import os
+import dj_database_url
 from urlparse import urlparse
 
-database_url = os.environ.get('DATABASE_URL',
-                              'postgres://sentry:sentry@localhost/sentry')
-db = urlparse(database_url)
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': db.path[1:],
-        'USER': db.username,
-        'PASSWORD': db.password,
-        'HOST': db.hostname,
-        'PORT': db.port,
-    }
-}
+DATABASES = {'default': dj_database_url.config(default='sqlite:///' +
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'db.sqlite') )}
 
 SENTRY_WEB_HOST = '0.0.0.0'
 SENTRY_WEB_PORT = int(os.environ.get('PORT', 9000))
+SENTRY_WEB_OPTIONS = {
+    'workers': 3,  
+    'worker_class': 'gevent',
+}
+
 
 SENTRY_PUBLIC = False
 SENTRY_KEY = os.environ.get('SENTRY_KEY')

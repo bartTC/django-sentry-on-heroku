@@ -1,4 +1,0 @@
-sentry==8.*
-dj-database-url
-psycopg2
-librabbitmq

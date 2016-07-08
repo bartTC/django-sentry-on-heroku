@@ -1,1 +1,1 @@
-web: sentry --config=sentry_conf.py start
+web: sentry --config=. run web

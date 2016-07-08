@@ -10,7 +10,7 @@ which makes the whole thing a one-click event.
 
         heroku apps:create <app-name>
         heroku addons:create heroku-postgresql:hobby-dev
-        heroku addons:create heroku-redis:hobby-dev
+        heroku addons:create rediscloud:30
         heroku addons:create sendgrid:starter
 
 2. Set some default environment settings:

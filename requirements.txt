@@ -1,3 +1,4 @@
-sentry==8.*        # A realtime logging and aggregation server.
-dj-database-url    # Use Database URLs in your Django Application.
-psycopg2           # Python-PostgreSQL Database Adapter
+sentry==8.*
+dj-database-url
+psycopg2
+librabbitmq
